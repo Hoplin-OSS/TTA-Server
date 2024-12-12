@@ -1,7 +1,7 @@
-from sqlmodel import text
-from sqlmodel import Session
+from sqlmodel import Session, text
 
-def database_health(session:Session):
+
+def database_health(session: Session):
     try:
         session.execute(text("SELECT 1"))
         return True

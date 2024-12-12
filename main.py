@@ -1,6 +1,8 @@
 import os
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+
 from routers import http_router, ws_router
 
 app = FastAPI(title="TTA Server", version=os.getenv("VERSION", "Unknown"))
@@ -16,5 +18,5 @@ app.add_middleware(
 app.include_router(http_router)
 
 
-#WebSocket Routers
+# WebSocket Routers
 app.include_router(ws_router)
